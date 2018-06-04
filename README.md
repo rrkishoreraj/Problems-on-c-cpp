@@ -1,2 +1,2 @@
 # Problems-on-c-cpp
-This repo consists of various problems that I've gone through.
+This repo consists of various interesting problems on c and c++ that I had solved.
