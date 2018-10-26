@@ -26,10 +26,14 @@ char pop()
 int priority(char element)
 {
   if (element == '^')
+    return 5;
+  else if (element == '*')
+    return 4;
+  else if (element == '/')
     return 3;
-  else if (element == '*' || element == '/')
+  else if (element == '+')
     return 2;
-  else if (element == '+' || element == '-')
+  else if (element == '-')
     return 1;
   else
     return 0;
@@ -48,7 +52,7 @@ void priority_check_on_stack(char a)
     }
     top--;
   }
-  else if (priority(a) >= priority(stack[top]))
+  else if ((priority(a) > priority(stack[top])) || (a == stack[top]))
     push(a);
   else if ((priority(a) != 0 && priority(stack[top]) != 0) && (priority(a) <= priority(stack[top])))
   {
@@ -89,7 +93,4 @@ int main() {
 }
 
 
-
-
-// (A+B/C*(D+E)-F)
-// ABC/DE+*+F-
+//a*b(c-d)/e+f*g
