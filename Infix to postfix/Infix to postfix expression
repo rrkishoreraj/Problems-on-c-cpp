@@ -52,7 +52,7 @@ void priority_check_on_stack(char a)
     }
     top--;
   }
-  else if ((priority(a) > priority(stack[top])) || (a == stack[top]))
+  else if ((priority(a) > priority(stack[top])))
     push(a);
   else if ((priority(a) != 0 && priority(stack[top]) != 0) && (priority(a) <= priority(stack[top])))
   {
