@@ -47,14 +47,12 @@ void priority_check_on_stack(char a)
   else if (a == ')')
   {
     while (stack[top] != '(')
-    {
         postfix[j++] = pop();
-    }
     top--;
   }
   else if ((priority(a) > priority(stack[top])))
     push(a);
-  else if ((priority(a) != 0 && priority(stack[top]) != 0) && (priority(a) <= priority(stack[top])))
+  else
   {
     while ((priority(a) != 0 && priority(stack[top]) != 0) && (priority(a) <= priority(stack[top])))
       postfix[j++] = pop();
